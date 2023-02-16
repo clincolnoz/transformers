@@ -668,6 +668,7 @@ def main():
     mlm_model.preprocess_datasets()
     mlm_model.define_masking()
     mlm_model.define_trainer()
+    mlm_model.evaluate()
     mlm_model.train()
     mlm_model.post_training_actions()
 
