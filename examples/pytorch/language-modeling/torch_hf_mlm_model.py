@@ -475,7 +475,7 @@ class TorchHFMLMModel(object):
 
     def define_trainer(self):
         # Initialize our Trainer
-        trainer = Trainer(
+        self.trainer = Trainer(
             model=self.model,
             args=self.training_args,
             train_dataset=self.train_dataset if self.training_args.do_train else None,
