@@ -375,7 +375,7 @@ class TorchHFMLMModel(object):
 
             remove_columns = [text_column_name]
             desc = "Running tokenizer on dataset line_by_line"
-            tokenized_datasets = self.define_tokenized_datasets(self, tokenize_function, remove_columns, desc)
+            tokenized_datasets = self.define_tokenized_datasets(tokenize_function, remove_columns, desc)
 
         else:
             # Otherwise, we tokenize every text, then concatenate them together before splitting them in smaller parts.
@@ -386,7 +386,7 @@ class TorchHFMLMModel(object):
 
             remove_columns = column_names
             desc = "Running tokenizer on every text in dataset"
-            tokenized_datasets = self.define_tokenized_datasets(self, tokenize_function, remove_columns, desc)
+            tokenized_datasets = self.define_tokenized_datasets(tokenize_function, remove_columns, desc)
 
             # Main data processing function that will concatenate all texts from our dataset and generate chunks of
             # max_seq_length.
