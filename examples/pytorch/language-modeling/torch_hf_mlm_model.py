@@ -662,7 +662,7 @@ def main():
     # Set the verbosity to info of the Transformers logger (on main process only):
     logger.info(f"Training/evaluation parameters {training_args}")
 
-    mlm_model = TorchHFMLMModel(model_args, data_args, training_args)
+    mlm_model = TorchHFMLMModel(data_args, model_args, training_args)
     mlm_model.prepare_raw_dataset()
     mlm_model.load_hf_model_and_tokenizer()
     mlm_model.preprocess_datasets()
