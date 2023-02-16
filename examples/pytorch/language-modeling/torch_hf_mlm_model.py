@@ -220,10 +220,10 @@ class DataTrainingArguments:
 
 class TorchHFMLMModel(object):
     """Generic class to continue pre-traingin of masked language models"""
-    def __init__(self, data_args, model_args, trainer_args):
+    def __init__(self, data_args, model_args, training_args):
         self.data_args = data_args
         self.model_args = model_args
-        self.trainer_args = trainer_args
+        self.training_args = training_args
         self.raw_datasets = None
         self.tokenizer = None
         self.train_dataset = None
