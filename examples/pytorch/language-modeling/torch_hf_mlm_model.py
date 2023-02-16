@@ -543,7 +543,7 @@ class TorchHFMLMModel(object):
         else:
             self.trainer.create_model_card(**kwargs)
 
-    def define_tokenized_datasets(self, tokenize_function, remove_columns: list[str]=None, desc: str=None):
+    def define_tokenized_datasets(self, tokenize_function, remove_columns, desc):
         with self.training_args.main_process_first(desc="dataset map tokenization"):
             if not self.data_args.streaming:
                 tokenized_datasets = self.raw_datasets.map(
